@@ -1,0 +1,309 @@
+@import "bourbon/bourbon"
+@import "neat/neat"
+@import "normalize"
+//colors var
+$light-gray: #DDDDDD
+$tomato: #FF4C2A
+$gray: #6C7A89
+$border: rgba(#000,.2)
+$blanco: #FFFFFF
+$dark-light: rgba(#000,.5)
+$azul: dodgerblue
+$mint: #42E0B8
+$rosa: deeppink
+$googlewhite: #FEFEFE
+$asfalto: #002743
+
+
+html
+    height: 100%
+
+.site
+    min-height: 100%
+    @include display(flex)
+    @include flex-direction(column)
+
+    .about-sec,
+    .contact-section
+        @include display(flex)
+        @include flex-direction(column)
+        @include justify-content(center)
+        @include align-items(center)
+        @include flex(1 0 auto)
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p
+
+    font-family: $helvetica
+    line-height: 1.5
+    letter-spacing: 1px
+    font-weight: lighter
+h2
+    text-transform: uppercase
+    font-family: $helvetica
+    font-weight: lighter
+h3
+    text-transform: uppercase
+    color: $gray
+p
+    text-transform: capitalize
+
+
+.button-mail
+    margin-top: 1em
+    display: block
+    background: $azul
+    color: $blanco
+    padding: .5em 1.2em
+    text-decoration: none
+    font-family: $helvetica
+    font-size: 1.3em
+    text-transform: uppercase
+    letter-spacing: 3px
+    @include transition( 1.0s ease-in 0s, 1.0s)
+
+.button-mail:hover
+    background: $tomato
+    border-radius: 25px
+    border: 3px dashed $blanco
+
+
+.main-header
+    background: $tomato
+
+.main-nav
+
+.logo
+    width: 100px
+    height: 100px
+    border-radius: 50%
+    //main layout ============
+
+.title
+    font-family: $helvetica
+    font-weight: lighter
+    color: $gray
+    text-shadow: 0 0 3px #000
+
+.first-section,
+.secondary-section,
+.contact-section,
+.main-footer
+    padding: 1em
+
+.secondary-section
+    background: $azul
+    font-family: $helvetica
+    color: $blanco
+
+.col,
+.single-column
+    font-family: $monospace
+    color: $gray
+    font-weight: lighter
+    @include display(flex)
+    @include flex-direction(column)
+    @include align-items(center)
+
+
+.main-header
+    height: auto
+    background: $tomato
+    padding: 1em
+    border-bottom: 5px solid $border
+
+
+
+.main-nav
+    width: 100%
+    @include display(flex)
+    @include flex-direction(column)
+    @include justify-content( center)
+    @include align-items( center)
+.menu
+    width: 100%
+    list-style: none
+    padding-left: 0
+    @include display(flex)
+    padding-top: 2em
+
+    li
+        @include flex(auto)
+        text-align: center
+
+    a
+        color: $blanco
+        display: block
+        line-height: 2.5
+        text-transform: uppercase
+        text-decoration: none
+        @include transition-property(background)
+        @include transition-duration(1.0s)
+    a:hover
+        background: $dark-light
+        border-radius: 25px
+        color: $azul
+
+    a:active
+        color: $mint
+.logo
+    width: 120px
+    height: 120px
+    border-radius: 50%
+    border: 5px dotted $blanco
+    box-shadow: 0 0 20px #000
+
+    //icons styles and transitions =============
+.icon-coffee,
+.icon-rocket,
+.icon-code-1
+    width: 100px
+    height: 100px
+    color: $azul
+    font-size: 3em
+    border-radius: 50%
+    cursor: pointer
+    border: 1px solid rgba($asfalto,.2)
+    @include display(flex)
+    @include justify-content( center)
+    @include align-items( center)
+    @include transition-duration(1.0s)
+    @include transition-timing-function(ease-in-out)
+    //@include transition-delay(0.5s)
+    @include transition-property(transform, color)
+
+
+.icon-coffee:hover,
+.icon-rocket:hover,
+.icon-code-1:hover
+    color: $rosa
+    border: 12px dashed $blanco
+    background: $dark-light
+    @include transform(scale(1.2) rotate(5turn))
+
+
+// footer inicio del footer =================//
+.main-footer
+
+    @include display(flex)
+    @include align-items( center)
+    background: $asfalto
+    color: $blanco
+    @include padding(1em)
+    .container
+
+        @include display(flex)
+        @include justify-content(space-between)
+        @include align-items(center)
+        @media (max-width: 1024px) and (min-width: 768px)
+            margin: 0 auto
+            width: 80%
+            @include justify-content(space-between)
+    .icon-container
+        @include display(flex)
+        @include justify-content(space-around)
+
+    //footer socials-icons styles =================
+.container a
+    text-decoration: none
+.icon-facebook,
+.icon-twitter,
+.icon-instagram
+    color: $blanco
+    font-size: 1.5em
+    padding-left: .3em
+.icon-facebook:hover,
+.icon-twitter:hover,
+.icon-instagram:hover
+    color: $tomato
+
+@media (min-width: 1024px)
+    .main-nav
+        width: 80%
+        margin: 0 auto
+
+        @include display(flex)
+        @include flex-direction(row)
+        @include justify-content(space-between)
+    .menu
+        width: 40%
+        @include padding(0)
+        @include margin(0)
+        @include align-self(flex-end)
+    .title
+        text-align: center
+
+    .main-nav
+        width: 80%
+        margin: 0 auto
+
+        @include display(flex)
+        @include flex-direction(row)
+        @include justify-content(space-between)
+    .menu
+        width: 40%
+        @include padding(0)
+        @include margin(0)
+        @include align-self(flex-end)
+
+    .first-section
+        padding: 4em 0
+        .container
+            padding-top: 4em
+
+    .container
+        margin: 0 auto
+        width: 80%
+        @include display(flex)
+        //@include align-items(center)
+        @include justify-content(space-between)
+    .col
+        width: 30%
+    .columnas,
+    .contact-container
+        max-width: 70%
+
+        //secondary-section  begins  ===========
+
+    .secondary-section
+        background: tomato url('../img/desk.jpg')no-repeat center
+        background-size: cover
+        color: $blanco
+        @include padding(12em null)
+
+    .column-single
+        width: 70%
+        margin: 0 auto
+
+    .about-sec
+        background: $googlewhite
+
+
+        //tablet viewport styles
+@media (max-width: 1024px) and (min-width: 768px)
+    .title
+        text-align: center
+    .first-section
+        padding: 4em 1em
+        .container
+            padding-top: 4em
+
+    .container
+        margin: 0 auto
+        width: 80%
+
+
+    .columnas,
+    .contact-container
+        max-width: 70%
+    .secondary-section
+        background: tomato url('../img/desk.jpg')no-repeat center
+        background-size: cover
+        color: $blanco
+        @include padding(12em null)
+    .column-single
+        width: 70%
+        margin: 0 auto
